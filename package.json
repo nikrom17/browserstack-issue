@@ -1,0 +1,46 @@
+{
+  "name": "paypal-button-redesign-storybook",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "build-storybook": "storybook build -o docs && cp .nojekyll docs/",
+    "deploy-storybook": "storybook-to-ghpages",
+    "dev": "vite",
+    "percy:live-storybook": "percy storybook http://localhost:6006",
+    "percy:playwright": "percy exec -- playwright test",
+    "percy:static-build": "npm run build-storybook && percy storybook ./docs",
+    "playwright:test": "npx playwright test",
+    "playwright:ui": "npx playwright test --ui",
+    "playwright:update-snapshots": "npx playwright test --update-snapshots",
+    "preview": "vite preview",
+    "serve": "serve docs",
+    "storybook": "storybook dev -p 6006",
+    "storybook:test": "test-storybook"
+  },
+  "devDependencies": {
+    "@percy/cli": "^1.28.2",
+    "@percy/playwright": "^1.0.5",
+    "@percy/storybook": "^5.0.3",
+    "@playwright/test": "^1.41.1",
+    "@storybook/addon-essentials": "^7.6.7",
+    "@storybook/addon-interactions": "^7.6.7",
+    "@storybook/addon-links": "^7.6.7",
+    "@storybook/blocks": "^7.6.7",
+    "@storybook/html": "^7.6.7",
+    "@storybook/html-vite": "^7.6.7",
+    "@storybook/test": "^7.6.7",
+    "@storybook/test-runner": "^0.16.0",
+    "@types/node": "^20.11.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.7",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "serve": "^14.2.1"
+  }
+}
